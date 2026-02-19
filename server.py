@@ -18,8 +18,11 @@ def _dumps(obj):
 
 
 def _get_conn():
+    host = os.environ["POSTGRES_HOST"].split(":")[0]
+    port = int(os.environ.get("POSTGRES_PORT", os.environ["POSTGRES_HOST"].split(":")[1] if ":" in os.environ["POSTGRES_HOST"] else "5432"))
     return psycopg2.connect(
-        host=os.environ["POSTGRES_HOST"],
+        host=host,
+        port=port,
         user=os.environ["POSTGRES_USER"],
         password=os.environ["POSTGRES_PASSWORD"],
         dbname="mev_inspect",
