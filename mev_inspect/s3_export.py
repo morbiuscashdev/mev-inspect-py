@@ -27,6 +27,8 @@ logger = logging.getLogger(__name__)
 
 
 def export_block(inspect_db_session, block_number: int) -> None:
+    if not get_export_bucket_name():
+        return
     for table in supported_tables:
         _export_block_by_table(inspect_db_session, block_number, table)
 
@@ -115,8 +117,8 @@ def get_endpoint_url() -> Optional[str]:
     return os.environ.get(AWS_ENDPOINT_URL_ENV)
 
 
-def get_export_bucket_name() -> str:
-    return os.environ[EXPORT_BUCKET_NAME_ENV]
+def get_export_bucket_name() -> Optional[str]:
+    return os.environ.get(EXPORT_BUCKET_NAME_ENV)
 
 
 def get_export_bucket_region() -> Optional[str]:
