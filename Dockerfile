@@ -1,7 +1,7 @@
 FROM python:3.9-slim-bullseye
 
 ENV POETRY_VERSION=1.5.1
-ENV POETRY_VIRTUALENVS_CREATE=false
+ENV POETRY_VIRTUALENVS_IN_PROJECT=true
 
 RUN useradd --create-home flashbot \
     && apt-get update \
