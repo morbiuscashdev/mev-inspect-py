@@ -1,0 +1,8 @@
+[build]
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "poetry run python server.py"
+healthcheckPath = "/health"
+healthcheckTimeout = 60
+restartPolicyType = "ALWAYS"
