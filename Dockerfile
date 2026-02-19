@@ -16,7 +16,7 @@ COPY --chown=flashbot ./pyproject.toml /app/pyproject.toml
 COPY --chown=flashbot ./poetry.lock /app/poetry.lock
 WORKDIR /app/
 
-RUN poetry install
+RUN poetry install --no-root
 
 USER flashbot
 
