@@ -52,6 +52,7 @@ class Protocol(Enum):
     opensea = "opensea"
     pulsex_v1 = "pulsex_v1"
     pulsex_v2 = "pulsex_v2"
+    phux = "phux"
 
 
 class ClassifiedTrace(Trace):
