@@ -1,6 +1,6 @@
 FROM python:3.9-slim-bullseye
 
-ENV POETRY_VERSION=1.1.12
+ENV POETRY_VERSION=1.5.1
 
 RUN useradd --create-home flashbot \
     && apt-get update \
