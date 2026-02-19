@@ -1,3 +1,4 @@
+from mev_inspect.chain_config import CRYPTOPUNKS_CONTRACT_ADDRESSES
 from mev_inspect.schemas.classifiers import Classifier, ClassifierSpec
 from mev_inspect.schemas.traces import Classification, Protocol
 
@@ -24,4 +25,4 @@ CRYPTO_PUNKS_SPEC = ClassifierSpec(
     },
 )
 
-CRYPTOPUNKS_CLASSIFIER_SPECS = [CRYPTO_PUNKS_SPEC]
+CRYPTOPUNKS_CLASSIFIER_SPECS = [CRYPTO_PUNKS_SPEC] if CRYPTOPUNKS_CONTRACT_ADDRESSES else []

@@ -1,5 +1,6 @@
 from typing import List, Optional
 
+from mev_inspect.chain_config import BANCOR_CONTRACT_ADDRESSES
 from mev_inspect.classifiers.helpers import create_swap_from_recipient_transfers
 from mev_inspect.schemas.classifiers import ClassifierSpec, SwapClassifier
 from mev_inspect.schemas.swaps import Swap
@@ -38,4 +39,4 @@ BANCOR_NETWORK_SPEC = ClassifierSpec(
     valid_contract_addresses=[BANCOR_NETWORK_CONTRACT_ADDRESS],
 )
 
-BANCOR_CLASSIFIER_SPECS = [BANCOR_NETWORK_SPEC]
+BANCOR_CLASSIFIER_SPECS = [BANCOR_NETWORK_SPEC] if BANCOR_CONTRACT_ADDRESSES else []

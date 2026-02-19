@@ -1,5 +1,6 @@
 from typing import List, Optional
 
+from mev_inspect.chain_config import CURVE_CONTRACT_ADDRESSES
 from mev_inspect.classifiers.helpers import create_swap_from_pool_transfers
 from mev_inspect.schemas.classifiers import ClassifierSpec, SwapClassifier
 from mev_inspect.schemas.swaps import Swap
@@ -487,4 +488,4 @@ CURVE_META_POOLS = [
     ),
 ]
 
-CURVE_CLASSIFIER_SPECS = [*CURVE_BASE_POOLS, *CURVE_META_POOLS]
+CURVE_CLASSIFIER_SPECS = [*CURVE_BASE_POOLS, *CURVE_META_POOLS] if CURVE_CONTRACT_ADDRESSES else []

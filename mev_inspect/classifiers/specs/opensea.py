@@ -1,5 +1,6 @@
 from typing import List, Optional
 
+from mev_inspect.chain_config import OPENSEA_CONTRACT_ADDRESSES
 from mev_inspect.classifiers.helpers import create_nft_trade_from_transfers
 from mev_inspect.schemas.classifiers import ClassifierSpec, NftTradeClassifier
 from mev_inspect.schemas.nft_trades import NftTrade
@@ -39,4 +40,4 @@ OPENSEA_SPEC = ClassifierSpec(
     },
 )
 
-OPENSEA_CLASSIFIER_SPECS = [OPENSEA_SPEC]
+OPENSEA_CLASSIFIER_SPECS = [OPENSEA_SPEC] if OPENSEA_CONTRACT_ADDRESSES else []

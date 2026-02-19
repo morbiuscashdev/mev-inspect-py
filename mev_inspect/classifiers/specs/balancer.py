@@ -1,5 +1,6 @@
 from typing import List, Optional
 
+from mev_inspect.chain_config import BALANCER_CONTRACT_ADDRESSES
 from mev_inspect.classifiers.helpers import create_swap_from_pool_transfers
 from mev_inspect.schemas.classifiers import ClassifierSpec, SwapClassifier
 from mev_inspect.schemas.swaps import Swap
@@ -36,6 +37,4 @@ BALANCER_V1_SPECS = [
     ),
 ]
 
-BALANCER_CLASSIFIER_SPECS = [
-    *BALANCER_V1_SPECS,
-]
+BALANCER_CLASSIFIER_SPECS = [*BALANCER_V1_SPECS] if BALANCER_CONTRACT_ADDRESSES else []

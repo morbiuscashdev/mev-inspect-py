@@ -1,5 +1,6 @@
 from typing import List, Optional
 
+from mev_inspect.chain_config import AAVE_CONTRACT_ADDRESSES
 from mev_inspect.classifiers.helpers import get_debt_transfer, get_received_transfer
 from mev_inspect.schemas.classifiers import (
     ClassifiedTrace,
@@ -90,4 +91,4 @@ ATOKENS_SPEC = ClassifierSpec(
     },
 )
 
-AAVE_CLASSIFIER_SPECS: List[ClassifierSpec] = [AAVE_SPEC, ATOKENS_SPEC]
+AAVE_CLASSIFIER_SPECS: List[ClassifierSpec] = [AAVE_SPEC, ATOKENS_SPEC] if AAVE_CONTRACT_ADDRESSES else []

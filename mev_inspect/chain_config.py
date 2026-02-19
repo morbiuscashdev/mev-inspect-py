@@ -1,0 +1,36 @@
+# Chain-specific configuration for PulseChain.
+# Update addresses here when adapting to a different chain.
+
+# Native wrapped token (equivalent to WETH on Ethereum)
+WRAPPED_NATIVE_TOKEN_ADDRESS = "0xA1077a294dDE1B09bB078844df40758a5D0f9a27"  # WPLS
+
+# Native token placeholder address (protocol-level, no contract)
+NATIVE_TOKEN_ADDRESS = "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+
+# Major tokens on PulseChain
+PLSX_TOKEN_ADDRESS = "0x95B303987A60C71504D99Aa1b13B4DA07b0790ab"
+HEX_TOKEN_ADDRESS = "0x2b591e99afe9f32eaa6214f7b7629768c40eeb39"
+USDC_TOKEN_ADDRESS = "0x15D38573d2feeb82e7ad5187aB8c1D52810B1f07"
+USDT_TOKEN_ADDRESS = "0x0Cb6F5a34ad42ec934882A05265A7d5F59b51A2f"
+DAI_TOKEN_ADDRESS = "0xefD766cCb38EaF1dfd701853BFCe31359239F305"
+
+# PulseX V1 (Uniswap V2 fork)
+PULSEX_V1_ROUTER_ADDRESS = "0x98bf93ebf5c380C0E6Ae8e192A7e2AE08edAcc02"
+PULSEX_V1_FACTORY_ADDRESS = "0x1715a3E4A142d8b698131108995174F37aEBA10D"
+
+# PulseX V2 (Uniswap V2 fork, fixes LP fee bug in V1)
+PULSEX_V2_ROUTER_ADDRESS = "0x165C3410fC91EF562C50559f7d2289fEbed552d9"
+PULSEX_V2_FACTORY_ADDRESS = "0x29eA7545DEf87022BAdc76323F373EA1e707C523"
+
+# Protocols not deployed on PulseChain — leave empty so specs never match.
+# Populate if/when equivalents are deployed.
+UNISWAP_V3_CONTRACT_ADDRESSES: dict = {}
+AAVE_CONTRACT_ADDRESSES: list = []
+COMPOUND_CONTRACT_ADDRESSES: list = []
+CURVE_CONTRACT_ADDRESSES: list = []
+BANCOR_CONTRACT_ADDRESSES: list = []
+OPENSEA_CONTRACT_ADDRESSES: list = []
+CRYPTOPUNKS_CONTRACT_ADDRESSES: list = []
+ZERO_EX_CONTRACT_ADDRESSES: list = []
+CREAM_CONTRACT_ADDRESSES: list = []
+BALANCER_CONTRACT_ADDRESSES: list = []

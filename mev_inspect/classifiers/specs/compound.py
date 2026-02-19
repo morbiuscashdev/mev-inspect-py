@@ -1,5 +1,6 @@
 from typing import List, Optional
 
+from mev_inspect.chain_config import COMPOUND_CONTRACT_ADDRESSES
 from mev_inspect.classifiers.helpers import get_debt_transfer, get_received_transfer
 from mev_inspect.schemas.classifiers import (
     Classification,
@@ -113,10 +114,9 @@ COMPOUND_V2_CTOKEN_SPEC = ClassifierSpec(
     },
 )
 
-COMPOUND_CLASSIFIER_SPECS: List[ClassifierSpec] = [
-    COMPOUND_V2_CETH_SPEC,
-    COMPOUND_V2_CTOKEN_SPEC,
-]
+COMPOUND_CLASSIFIER_SPECS: List[ClassifierSpec] = (
+    [COMPOUND_V2_CETH_SPEC, COMPOUND_V2_CTOKEN_SPEC] if COMPOUND_CONTRACT_ADDRESSES else []
+)
 
 
 def _get_seize_call(traces: List[ClassifiedTrace]) -> Optional[ClassifiedTrace]:

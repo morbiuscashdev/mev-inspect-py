@@ -1,5 +1,6 @@
 from typing import List, Optional, Tuple
 
+from mev_inspect.chain_config import ZERO_EX_CONTRACT_ADDRESSES
 from mev_inspect.schemas.classifiers import ClassifierSpec, SwapClassifier
 from mev_inspect.schemas.swaps import Swap
 from mev_inspect.schemas.traces import DecodedCallTrace, Protocol
@@ -219,7 +220,7 @@ ZEROX_GENERIC_SPECS = [
     ),
 ]
 
-ZEROX_CLASSIFIER_SPECS = ZEROX_CONTRACT_SPECS + ZEROX_GENERIC_SPECS
+ZEROX_CLASSIFIER_SPECS = (ZEROX_CONTRACT_SPECS + ZEROX_GENERIC_SPECS) if ZERO_EX_CONTRACT_ADDRESSES else []
 
 
 def _get_taker_token_transfer_amount(
