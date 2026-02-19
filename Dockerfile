@@ -1,6 +1,7 @@
 FROM python:3.9-slim-bullseye
 
 ENV POETRY_VERSION=1.5.1
+ENV POETRY_VIRTUALENVS_CREATE=false
 
 RUN useradd --create-home flashbot \
     && apt-get update \
@@ -15,10 +16,9 @@ COPY --chown=flashbot ./pyproject.toml /app/pyproject.toml
 COPY --chown=flashbot ./poetry.lock /app/poetry.lock
 WORKDIR /app/
 
-USER flashbot
+RUN poetry install
 
-RUN poetry config virtualenvs.create false \
-    && poetry install
+USER flashbot
 
 COPY --chown=flashbot . /app
 
